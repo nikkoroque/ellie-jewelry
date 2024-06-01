@@ -19,14 +19,15 @@ const CartModal = () => {
                     <div className='flex flex-col gap-8'>
                         {/*If cart is not empty list products*/}
                         <div className='flex gap-4'>
-                            <Image src='https://images.pexels.com/photos/7992684/pexels-photo-7992684.jpeg' alt='' width={72} height={96} className='object-cover rounded-md'/>
+                            <Image src='/images/f-pendant.jpeg' alt='' width={72} height={96}
+                                   className='object-cover rounded-md'/>
                             <div className='flex flex-col justify-between w-full'>
                                 {/*TOP*/}
                                 <div className='flex items-center justify-between gap-8'>
                                     {/*TITLE*/}
                                     <div className='font-semibold'>
-                                        <h3>Product Name</h3>
-                                        <div className='p-1 bg-gray-50 rounded-sm'>$49.69</div>
+                                        <h3>Bee Dangle Charm</h3>
+                                        <div className='p-1 bg-gray-50 rounded-sm'>$7,350.00</div>
                                     </div>
                                     {/*DESC*/}
                                     <div className='text-sm text-gray-500'>
@@ -35,7 +36,33 @@ const CartModal = () => {
                                 </div>
                                 {/*BOTTOM*/}
                                 <div className='flex justify-between text-sm'>
-                                    <span className='text-gray-500'>Qty 2</span>
+                                    <span className='text-gray-500'>Qty 1</span>
+                                    <span className='text-blue-500'>Remove</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex flex-col gap-8'>
+                        {/*If cart is not empty list products*/}
+                        <div className='flex gap-4'>
+                            <Image src='/images/f-ring.jpeg' alt='' width={72} height={96}
+                                   className='object-cover rounded-md'/>
+                            <div className='flex flex-col justify-between w-full'>
+                                {/*TOP*/}
+                                <div className='flex items-center justify-between gap-8'>
+                                    {/*TITLE*/}
+                                    <div className='font-semibold'>
+                                        <h3>Asymmetric Ring</h3>
+                                        <div className='p-1 bg-gray-50 rounded-sm'>$15,095.00</div>
+                                    </div>
+                                    {/*DESC*/}
+                                    <div className='text-sm text-gray-500'>
+                                        available
+                                    </div>
+                                </div>
+                                {/*BOTTOM*/}
+                                <div className='flex justify-between text-sm'>
+                                    <span className='text-gray-500'>Qty 1</span>
                                     <span className='text-blue-500'>Remove</span>
                                 </div>
                             </div>
@@ -45,7 +72,7 @@ const CartModal = () => {
                     <div className=''>
                         <div className='flex items-center justify-between font-semibold'>
                             <span className=''>Subtotal</span>
-                            <span className=''>$56.39</span>
+                            <span className=''>$7,350.00</span>
                         </div>
                         <p className='text-gray-500 text-sm mt-2 mb-4'>
                             Shipping and taxes calculated at checkout.
