@@ -1,7 +1,7 @@
 const slides = [
     {
         id: 1,
-        title: "Summer Sale Collections",
+        title: "Demo Website",
         description: "Sale! Up to 50% off!",
         img: "/images/slider0.jpg",
         url: "/",
@@ -9,7 +9,7 @@ const slides = [
     },
     {
         id: 2,
-        title: "Winter Sale Collections",
+        title: "Demo Website",
         description: "Sale! Up to 50% off!",
         img: "https://images.pexels.com/photos/1413420/pexels-photo-1413420.jpeg",
         url: "/",
@@ -17,7 +17,7 @@ const slides = [
     },
     {
         id: 3,
-        title: "Spring Sale Collections",
+        title: "Demo Website",
         description: "Sale! Up to 50% off!",
         img: "https://images.pexels.com/photos/11655347/pexels-photo-11655347.jpeg",
         url: "/",
