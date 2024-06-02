@@ -15,6 +15,7 @@ const config: Config = {
       },
       colors: {
         ellieRed: "#F35C7A",
+        ellieGray: "#EBEDED",
         imgBg: "#F5F5F5",
       },
     },

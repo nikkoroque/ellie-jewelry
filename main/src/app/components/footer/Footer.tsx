@@ -26,9 +26,7 @@ const Footer = () => {
             <div className='flex flex-col md:flex-row justify-between gap-24'>
                 {/*LEFT*/}
                 <div className='w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8'>
-                    <Link href="/">
-                        <Logo />
-                    </Link>
+                    <Logo />
                     <p>1537 Diane Street Santa Barbara California 93101</p>
                     <span className='font-semibold'>demo@ellie.com</span>
                     <span className='font-semibold'>+1 818.533.1507</span>
@@ -78,7 +76,7 @@ const Footer = () => {
                     <p>Be the first to get the latest news about trends, promotions, and much more!</p>
                     <div className='flex'>
                         <input type="text" placeholder='Email Address' className='p-4 w-3/4'/>
-                        <button className='w-1/4 bg-ellieRed text-white'>JOIN</button>
+                        <button className='w-1/4 bg-black text-white'>JOIN</button>
                     </div>
                     <span className='font-semibold'>Secure Payments</span>
                     <div className='flex gap-6'>
