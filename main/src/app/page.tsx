@@ -1,9 +1,31 @@
+"use client"
+
 import Slider from "@/app/components/slider/Slider";
 import Featured from "@/app/components/product/Featured";
 import Category from "@/app/components/product/Category";
 import NewProducts from "@/app/components/product/NewProducts";
+import {useContext, useEffect, useState} from "react";
+import {useWixClient} from "@/hooks/useWixClient";
+
 
 const HomePage = () => {
+
+    const wixClient = useWixClient();
+
+    useEffect(() => {
+        const getProducts = async () => {
+            try {
+                const res = await wixClient.products.queryProducts().find();
+                console.log(res);
+            } catch (error: any) {
+                console.error('Error fetching products:', error);
+            }
+        };
+
+        getProducts();
+    }, [wixClient]);
+
+
   return (
       <div className="">
           <Slider/>
