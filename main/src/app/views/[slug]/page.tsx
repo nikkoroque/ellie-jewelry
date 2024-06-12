@@ -1,7 +1,6 @@
 import Gallery from "@/app/components/product/Gallery";
 import Attributes from "@/app/components/product/Attributes";
 import Add from "@/app/components/product/Add";
-import Featured from "@/app/components/product/Featured";
 
 const Product = () => {
     return (
@@ -61,7 +60,6 @@ const Product = () => {
             </div>
             <div className='h-[2px] bg-gray-100'/>
             <h1 className='text-2xl font-medium py-4'>Similar Products</h1>
-            <Featured/>
         </div>
     )
 };
