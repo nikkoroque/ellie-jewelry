@@ -1,46 +1,52 @@
 import Link from "next/link";
 import Image from "next/image";
+import {wixClientServer} from "@/lib/wixClientServer";
 
-const Category = () => {
+const Category = async () => {
+
+    const wixClient = await wixClientServer();
+
+    const categories = await wixClient.collections.queryCollections().find();
     return (
         <div className='px-4 overflow-x-scroll scrollbar-hide'>
             <div className='flex gap-4 md:gap-8'>
-                <Link href='/views/shop?cat=test' className='flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6'>
+                {categories.items.map((item) => (
+                    <Link href={`views/shop?cat=${item.slug}`} className='flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6' key={item._id}>
                     <div className='relative w-full h-96 bg-imgBg'>
-                        <Image src='/images/new.jpg' alt='' fill sizes='20vw' className='object-contain' />
+                        <Image src={item.media?.mainMedia?.image?.url || "category.png"} alt='' fill sizes='20vw' className='object-contain'/>
                     </div>
-                    <h1 className='mt-8 font-light text-clip tracking-wide'>New</h1>
-                </Link>
-                <Link href='/views/shop?cat=test' className='flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6'>
-                    <div className='relative w-full h-96 bg-imgBg'>
-                        <Image src='/images/rings.jpeg' alt='' fill sizes='20vw' className='object-contain' />
-                    </div>
-                    <h1 className='mt-8 font-light text-clip tracking-wide'>Rings</h1>
-                </Link>
-                <Link href='/views/shop?cat=test' className='flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6'>
-                    <div className='relative w-full h-96 bg-imgBg'>
-                        <Image src='/images/necklace.jpg' alt='' fill sizes='20vw' className='object-contain' />
-                    </div>
-                    <h1 className='mt-8 font-light text-clip tracking-wide'>Necklace</h1>
-                </Link>
-                <Link href='/views/shop?cat=test' className='flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6'>
-                    <div className='relative w-full h-96 bg-imgBg'>
-                        <Image src='/images/earrings.jpeg' alt='' fill sizes='20vw' className='object-contain' />
-                    </div>
-                    <h1 className='mt-8 font-light text-clip tracking-wide'>Earrings</h1>
-                </Link>
-                <Link href='/views/shop?cat=test' className='flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6'>
-                    <div className='relative w-full h-96 bg-imgBg'>
-                        <Image src='/images/pendants.jpeg' alt='' fill sizes='20vw' className='object-contain' />
-                    </div>
-                    <h1 className='mt-8 font-light text-clip tracking-wide'>Pendants</h1>
-                </Link>
-                <Link href='/views/shop?cat=test' className='flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6'>
-                    <div className='relative w-full h-96 bg-imgBg'>
-                        <Image src='/images/charms.jpeg' alt='' fill sizes='20vw' className='object-contain' />
-                    </div>
-                    <h1 className='mt-8 font-light text-clip tracking-wide'>Charms</h1>
-                </Link>
+                    <h1 className='mt-8 font-light text-clip tracking-wide'>{item.name}</h1>
+                </Link>))}
+                {/*<Link href='/views/shop?cat=test' className='flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6'>*/}
+                {/*    <div className='relative w-full h-96 bg-imgBg'>*/}
+                {/*        <Image src='/images/rings.jpeg' alt='' fill sizes='20vw' className='object-contain' />*/}
+                {/*    </div>*/}
+                {/*    <h1 className='mt-8 font-light text-clip tracking-wide'>Rings</h1>*/}
+                {/*</Link>*/}
+                {/*<Link href='/views/shop?cat=test' className='flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6'>*/}
+                {/*    <div className='relative w-full h-96 bg-imgBg'>*/}
+                {/*        <Image src='/images/necklace.jpg' alt='' fill sizes='20vw' className='object-contain' />*/}
+                {/*    </div>*/}
+                {/*    <h1 className='mt-8 font-light text-clip tracking-wide'>Necklace</h1>*/}
+                {/*</Link>*/}
+                {/*<Link href='/views/shop?cat=test' className='flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6'>*/}
+                {/*    <div className='relative w-full h-96 bg-imgBg'>*/}
+                {/*        <Image src='/images/earrings.jpeg' alt='' fill sizes='20vw' className='object-contain' />*/}
+                {/*    </div>*/}
+                {/*    <h1 className='mt-8 font-light text-clip tracking-wide'>Earrings</h1>*/}
+                {/*</Link>*/}
+                {/*<Link href='/views/shop?cat=test' className='flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6'>*/}
+                {/*    <div className='relative w-full h-96 bg-imgBg'>*/}
+                {/*        <Image src='/images/pendants.jpeg' alt='' fill sizes='20vw' className='object-contain' />*/}
+                {/*    </div>*/}
+                {/*    <h1 className='mt-8 font-light text-clip tracking-wide'>Pendants</h1>*/}
+                {/*</Link>*/}
+                {/*<Link href='/views/shop?cat=test' className='flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6'>*/}
+                {/*    <div className='relative w-full h-96 bg-imgBg'>*/}
+                {/*        <Image src='/images/charms.jpeg' alt='' fill sizes='20vw' className='object-contain' />*/}
+                {/*    </div>*/}
+                {/*    <h1 className='mt-8 font-light text-clip tracking-wide'>Charms</h1>*/}
+                {/*</Link>*/}
             </div>
         </div>
     )

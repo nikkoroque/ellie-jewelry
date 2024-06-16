@@ -4,13 +4,14 @@ import {wixClientServer} from "@/lib/wixClientServer";
 import {products} from "@wix/stores";
 import DOMPurify from "isomorphic-dompurify";
 
-const Featured = async ({categoryId, limit}:{categoryId:string; limit?:number;}) => {
+const Featured = async ({categoryId, limit, searchParams}:{categoryId:string; limit?:number; searchParams?: any;}) => {
 
     const PRODUCT_PER_PAGE = 20;
 
     const wixClient = await wixClientServer();
     const res = await wixClient.products.queryProducts().eq("collectionIds", categoryId).limit(limit || PRODUCT_PER_PAGE).find();
 
+    // @ts-ignore
     return (
         <div className='mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap'>
             {res.items.map((product : products.Product) => (
