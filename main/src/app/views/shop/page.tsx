@@ -1,5 +1,5 @@
 import Filter from "@/app/components/filter/Filter";
-import Featured from "@/app/components/product/Featured";
+import ProductList from "@/app/components/product/ProductList";
 import MiniCategory from "@/app/components/product/MiniCategory";
 import {wixClientServer} from "@/lib/wixClientServer";
 import {Suspense} from "react";
@@ -31,7 +31,7 @@ const Shop = async ({searchParams} : {searchParams:any}) => {
                 <h1 className='mt-12 text-xl font-semibold'>{cat.collection?.name}</h1>
                 <Suspense fallback={'loading'}>
                     {/*Use all-products if id is invalid*/}
-                    <Featured categoryId={cat.collection?._id || '00000000-000000-000000-000000000001'} searchParams/>
+                    <ProductList categoryId={cat.collection?._id || '00000000-000000-000000-000000000001'} searchParams/>
                 </Suspense>
             </div>
         </div>

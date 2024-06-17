@@ -4,7 +4,7 @@ import {wixClientServer} from "@/lib/wixClientServer";
 import {products} from "@wix/stores";
 import DOMPurify from "isomorphic-dompurify";
 
-const Featured = async ({categoryId, limit, searchParams}:{categoryId:string; limit?:number; searchParams?: any;}) => {
+const ProductList = async ({categoryId, limit, searchParams}:{categoryId:string; limit?:number; searchParams?: any;}) => {
 
     const PRODUCT_PER_PAGE = 20;
 
@@ -64,4 +64,4 @@ const Featured = async ({categoryId, limit, searchParams}:{categoryId:string; li
     )
 };
 
-export default Featured;
+export default ProductList;
