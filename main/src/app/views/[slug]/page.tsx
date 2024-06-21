@@ -44,7 +44,7 @@ const Product = async ({ params } : { params : { slug : string }}) => {
                         </div>
                     )}
                     <div className='h-[2px] bg-gray-100'/>
-                    <Attributes/>
+                    {product.variants && product.productOptions && <Attributes productId = {product._id!} variants={product.variants} productOptions={product.productOptions}/>}
                     <Add/>
                     <div className='h-[2px] bg-gray-100'/>
                     <div className='text-sm'>
